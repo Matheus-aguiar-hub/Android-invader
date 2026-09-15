@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Scaffold
@@ -25,6 +26,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.android_invaders.ui.theme.AndroidInvadersTheme
 
 class MainActivity : ComponentActivity() {
@@ -53,6 +55,7 @@ fun BasicComponentsScreen(modifier: Modifier = Modifier) {
         Row(verticalAlignment = Alignment.CenterVertically){
             Text(
                 text = "Score: 0050",
+                fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color(0xFFFFFFFF),
                 fontFamily = FontFamily.Serif
@@ -65,25 +68,26 @@ fun BasicComponentsScreen(modifier: Modifier = Modifier) {
             Text(
                 text = "Lives: ",
                 fontWeight = FontWeight.Bold,
+                fontSize = 16.sp,
                 color = Color(0xFFFFFFFF),
                 fontFamily = FontFamily.Serif,
                 modifier = Modifier
             )
 
             AndroidEnemy(
-                modifier = Modifier.size(30.dp)
+                modifier = Modifier.size(50.dp)
                     .padding(2.dp),
                 color = Color.Green
             )
 
             AndroidEnemy(
-                modifier = Modifier.size(30.dp)
+                modifier = Modifier.size(50.dp)
                     .padding(2.dp),
                 color = Color.Green
             )
 
             AndroidEnemy(
-                modifier = Modifier.size(30.dp)
+                modifier = Modifier.size(50.dp)
                     .padding(2.dp),
                 color = Color.Green
             )
@@ -117,6 +121,33 @@ fun BasicComponentsScreen(modifier: Modifier = Modifier) {
                 )
             }
         }
+        Spacer(
+            modifier = Modifier.weight(1f)
+        )
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            StartLogo(
+                modifier = Modifier
+                    .padding(bottom = 32.dp)
+                    .size(100.dp)
+            )
+
+            Text(
+                text = "PRESS START",
+                fontWeight = FontWeight.Bold,
+                color = Color.White,
+                fontSize = 24.sp,
+                fontFamily = FontFamily.Serif,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .padding(bottom = 32.dp)
+                    .background(Color(91, 91, 91, 255))
+                    .fillMaxWidth()
+                    .padding(12.dp)
+            )
+        }
     }
 }
 
@@ -130,5 +161,16 @@ fun AndroidEnemy(
         painter = painterResource(R.drawable.ic_launcher_foreground),
         colorFilter = ColorFilter.tint(color = color),
         contentDescription = "Android Enemy"
+    )
+}
+
+@Composable
+fun StartLogo(
+    modifier: Modifier = Modifier
+) {
+    Image(
+        modifier = modifier,
+        painter = painterResource(R.drawable.icone_sem_background),
+        contentDescription = "Nave espacial"
     )
 }
