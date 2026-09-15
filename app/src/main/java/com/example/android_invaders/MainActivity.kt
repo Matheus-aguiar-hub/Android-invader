@@ -12,8 +12,12 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -75,48 +79,56 @@ fun BasicComponentsScreen(modifier: Modifier = Modifier) {
             )
 
             AndroidEnemy(
-                modifier = Modifier.size(50.dp)
+                modifier = Modifier
+                    .size(50.dp)
                     .padding(2.dp),
                 color = Color.Green
             )
 
             AndroidEnemy(
-                modifier = Modifier.size(50.dp)
+                modifier = Modifier
+                    .size(50.dp)
                     .padding(2.dp),
                 color = Color.Green
             )
 
             AndroidEnemy(
-                modifier = Modifier.size(50.dp)
+                modifier = Modifier
+                    .size(50.dp)
                     .padding(2.dp),
                 color = Color.Green
             )
 
-            }
+        }
         Column {
             Row {
                 AndroidEnemy(
-                    modifier = Modifier.size(80.dp),
+                    modifier = Modifier
+                        .size(80.dp),
                     color = Color(124, 248, 110, 255)
                 )
 
                 AndroidEnemy(
-                    modifier = Modifier.size(80.dp),
+                    modifier = Modifier
+                        .size(80.dp),
                     color = Color.Red
                 )
 
                 AndroidEnemy(
-                    modifier = Modifier.size(80.dp),
+                    modifier = Modifier
+                        .size(80.dp),
                     color = Color.Blue
                 )
 
                 AndroidEnemy(
-                    modifier = Modifier.size(80.dp),
+                    modifier = Modifier
+                        .size(80.dp),
                     color = Color.Yellow
                 )
 
                 AndroidEnemy(
-                    modifier = Modifier.size(80.dp),
+                    modifier = Modifier
+                        .size(80.dp),
                     color = Color.Green
                 )
             }
@@ -130,23 +142,27 @@ fun BasicComponentsScreen(modifier: Modifier = Modifier) {
         ) {
             StartLogo(
                 modifier = Modifier
-                    .padding(bottom = 32.dp)
+                    .padding(bottom = 20.dp)
                     .size(100.dp)
             )
-
-            Text(
-                text = "PRESS START",
-                fontWeight = FontWeight.Bold,
-                color = Color.White,
-                fontSize = 24.sp,
-                fontFamily = FontFamily.Serif,
-                textAlign = TextAlign.Center,
+            Button(
+                onClick = {},
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2D2D2D)),
+                shape = RoundedCornerShape(8.dp),
                 modifier = Modifier
-                    .padding(bottom = 32.dp)
-                    .background(Color(91, 91, 91, 255))
                     .fillMaxWidth()
-                    .padding(12.dp)
-            )
+                    .height(55.dp)
+                    .padding(bottom = 10.dp)
+            ) {
+
+
+                Text(
+                    text = "PRESS START",
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White,
+                    fontSize = 24.sp
+                )
+            }
         }
     }
 }
