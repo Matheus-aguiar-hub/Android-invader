@@ -56,6 +56,7 @@ fun BasicComponentsScreen(modifier: Modifier = Modifier) {
         .fillMaxSize()
         .background(Color(0, 0, 0, 255))
     ){
+        // Score
         Row(verticalAlignment = Alignment.CenterVertically){
             Text(
                 text = "Score: 0050",
@@ -68,7 +69,7 @@ fun BasicComponentsScreen(modifier: Modifier = Modifier) {
             Spacer(
                 modifier = Modifier.weight(1f)
             )
-
+            //Vidas
             Text(
                 text = "Lives: ",
                 fontWeight = FontWeight.Bold,
@@ -77,7 +78,7 @@ fun BasicComponentsScreen(modifier: Modifier = Modifier) {
                 fontFamily = FontFamily.Serif,
                 modifier = Modifier
             )
-
+            //Icones de vida
             AndroidEnemy(
                 modifier = Modifier
                     .size(50.dp)
@@ -101,6 +102,7 @@ fun BasicComponentsScreen(modifier: Modifier = Modifier) {
 
         }
         Column {
+            //Inimigos
             Row {
                 AndroidEnemy(
                     modifier = Modifier
@@ -133,6 +135,7 @@ fun BasicComponentsScreen(modifier: Modifier = Modifier) {
                 )
             }
         }
+        //Espacamento
         Spacer(
             modifier = Modifier.weight(1f)
         )
@@ -140,11 +143,13 @@ fun BasicComponentsScreen(modifier: Modifier = Modifier) {
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.fillMaxWidth()
         ) {
+            //Logo de inicio
             StartLogo(
                 modifier = Modifier
                     .padding(bottom = 20.dp)
                     .size(100.dp)
             )
+            //Botao de inicio
             Button(
                 onClick = {},
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2D2D2D)),
@@ -167,6 +172,7 @@ fun BasicComponentsScreen(modifier: Modifier = Modifier) {
     }
 }
 
+//Cria os inimigos para reutilizar
 @Composable
 fun AndroidEnemy(
     color: Color,
@@ -180,6 +186,7 @@ fun AndroidEnemy(
     )
 }
 
+//Icone da logo
 @Composable
 fun StartLogo(
     modifier: Modifier = Modifier
